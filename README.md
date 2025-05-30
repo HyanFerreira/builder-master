@@ -60,4 +60,4 @@ Para sugestões, ideias ou bugs, abra uma [Issue](https://github.com/SEU-USUARIO
 
 ## 📜 Licença
 
-Este projeto é distribuído sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+Este projeto é distribuído sob a licença CC0 1.0 Universal. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
