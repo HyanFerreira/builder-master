@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "buildermaster:item/builder_initiate_leggings"
+  }
+}
