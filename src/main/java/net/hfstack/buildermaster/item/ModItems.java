@@ -25,16 +25,29 @@ public class ModItems {
 
     public static final Item BUILDER_ADVANCED_HELMET = registerItem("builder_advanced_helmet",
             new ModArmorItem(ModArmorMaterials.BUILDER_ADV_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
+                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(30))));
     public static final Item BUILDER_ADVANCED_CHESTPLATE = registerItem("builder_advanced_chestplate",
             new ModArmorItem(ModArmorMaterials.BUILDER_ADV_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))));
+                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(30))));
     public static final Item BUILDER_ADVANCED_LEGGINGS = registerItem("builder_advanced_leggings",
             new ModArmorItem(ModArmorMaterials.BUILDER_ADV_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))));
+                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(30))));
     public static final Item BUILDER_ADVANCED_BOOTS = registerItem("builder_advanced_boots",
             new ModArmorItem(ModArmorMaterials.BUILDER_ADV_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))));
+                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(30))));
+
+    public static final Item BUILDER_MASTER_HELMET = registerItem("builder_master_helmet",
+            new ModArmorItem(ModArmorMaterials.BUILDER_MASTER_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(35))));
+    public static final Item BUILDER_MASTER_CHESTPLATE = registerItem("builder_master_chestplate",
+            new ModArmorItem(ModArmorMaterials.BUILDER_MASTER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(35))));
+    public static final Item BUILDER_MASTER_LEGGINGS = registerItem("builder_master_leggings",
+            new ModArmorItem(ModArmorMaterials.BUILDER_MASTER_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(35))));
+    public static final Item BUILDER_MASTER_BOOTS = registerItem("builder_master_boots",
+            new ModArmorItem(ModArmorMaterials.BUILDER_MASTER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(35))));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(BuilderMaster.MOD_ID, name), item);

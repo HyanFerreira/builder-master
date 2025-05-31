@@ -23,8 +23,14 @@ public class ModArmorItem extends ArmorItem {
                                     new StatusEffectInstance(StatusEffects.JUMP_BOOST, 400, 0, false, false)))
                     .put(ModArmorMaterials.BUILDER_ADV_ARMOR_MATERIAL,
                             List.of(
-                                    new StatusEffectInstance(StatusEffects.HASTE, 400, 1, false, false),
+                                    new StatusEffectInstance(StatusEffects.HASTE, 400, 2, false, false),
                                     new StatusEffectInstance(StatusEffects.JUMP_BOOST, 400, 1, false, false),
+                                    new StatusEffectInstance(StatusEffects.NIGHT_VISION, 400, 0, false, false)))
+                    .put(ModArmorMaterials.BUILDER_MASTER_ARMOR_MATERIAL,
+                            List.of(
+                                    new StatusEffectInstance(StatusEffects.HASTE, 400, 4, false, false),
+                                    new StatusEffectInstance(StatusEffects.JUMP_BOOST, 400, 2, false, false),
+                                    new StatusEffectInstance(StatusEffects.SPEED, 400, 1, false, false),
                                     new StatusEffectInstance(StatusEffects.NIGHT_VISION, 400, 0, false, false)))
                     .build();
 
@@ -46,6 +52,8 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private void evaluateArmorEffects(PlayerEntity player) {
+        boolean isWearingMasterSet = hasCorrectArmorOn(ModArmorMaterials.BUILDER_MASTER_ARMOR_MATERIAL, player);
+
         for (Map.Entry<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             RegistryEntry<ArmorMaterial> mapArmorMaterial = entry.getKey();
             List<StatusEffectInstance> mapStatusEffects = entry.getValue();
@@ -54,7 +62,23 @@ public class ModArmorItem extends ArmorItem {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffects);
             }
         }
+
+        // Habilita o voo se estiver com a armadura master
+        if (isWearingMasterSet) {
+            if (!player.getAbilities().allowFlying) {
+                player.getAbilities().allowFlying = true;
+                player.sendAbilitiesUpdate();
+            }
+        } else {
+            // Remove a habilidade de voar se o jogador não estiver em modo criativo/espectador
+            if (!player.isCreative() && !player.isSpectator() && player.getAbilities().allowFlying) {
+                player.getAbilities().flying = false;
+                player.getAbilities().allowFlying = false;
+                player.sendAbilitiesUpdate();
+            }
+        }
     }
+
 
     private void addStatusEffectForMaterial(PlayerEntity player, RegistryEntry<ArmorMaterial> mapArmorMaterial, List<StatusEffectInstance> mapStatusEffect) {
         boolean hasPlayerEffect = mapStatusEffect.stream().allMatch(statusEffectInstance -> player.hasStatusEffect(statusEffectInstance.getEffectType()));
@@ -67,29 +91,20 @@ public class ModArmorItem extends ArmorItem {
         }
     }
 
-    private boolean hasFullSuitOfArmorOn(PlayerEntity player) {
-        ItemStack boots = player.getInventory().getArmorStack(0);
-        ItemStack leggings = player.getInventory().getArmorStack(1);
-        ItemStack breastplate = player.getInventory().getArmorStack(2);
-        ItemStack helmet = player.getInventory().getArmorStack(3);
-
-        return !helmet.isEmpty() && !breastplate.isEmpty()
-                && !leggings.isEmpty() && !boots.isEmpty();
-    }
-
     private boolean hasCorrectArmorOn(RegistryEntry<ArmorMaterial> material, PlayerEntity player) {
         for (ItemStack armorStack : player.getInventory().armor) {
-            if (!(armorStack.getItem() instanceof ArmorItem)) {
+            if (!(armorStack.getItem() instanceof ArmorItem armorItem) || !armorItem.getMaterial().equals(material)) {
                 return false;
             }
         }
-
-        ArmorItem boots = ((ArmorItem) player.getInventory().getArmorStack(0).getItem());
-        ArmorItem leggings = ((ArmorItem) player.getInventory().getArmorStack(1).getItem());
-        ArmorItem breastplate = ((ArmorItem) player.getInventory().getArmorStack(2).getItem());
-        ArmorItem helmet = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
-
-        return helmet.getMaterial() == material && breastplate.getMaterial() == material &&
-                leggings.getMaterial() == material && boots.getMaterial() == material;
+        return true;
     }
+
+    private boolean hasFullSuitOfArmorOn(PlayerEntity player) {
+        return !player.getInventory().getArmorStack(3).isEmpty()
+                && !player.getInventory().getArmorStack(2).isEmpty()
+                && !player.getInventory().getArmorStack(1).isEmpty()
+                && !player.getInventory().getArmorStack(0).isEmpty();
+    }
+
 }

@@ -9,5 +9,9 @@
   "item.buildermaster.builder_advanced_helmet": "Advanced Builder Helmet",
   "item.buildermaster.builder_advanced_chestplate": "Advanced Builder Chestplate",
   "item.buildermaster.builder_advanced_leggings": "Advanced Builder Leggings",
-  "item.buildermaster.builder_advanced_boots": "Advanced Builder Boots"
+
+  "item.buildermaster.builder_master_helmet": "Builder Master Helmet",
+  "item.buildermaster.builder_master_chestplate": "Builder Master Chestplate",
+  "item.buildermaster.builder_master_leggings": "Builder Master Leggings",
+  "item.buildermaster.builder_master_boots": "Builder Master Boots"
 }

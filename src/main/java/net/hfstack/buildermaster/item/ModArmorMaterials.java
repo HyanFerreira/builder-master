@@ -43,9 +43,26 @@ public class ModArmorMaterials {
                         map.put(ArmorItem.Type.HELMET, 2);
                     }),
                     15,
-                    SoundEvents.ITEM_ARMOR_EQUIP_IRON,
+                    SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
                     () -> Ingredient.ofItems(Items.DIAMOND),
                     List.of(new ArmorMaterial.Layer(Identifier.of(BuilderMaster.MOD_ID, "builder_advanced"))),
+                    0.0f,
+                    0.0f
+            )
+    );
+
+    public static final RegistryEntry<ArmorMaterial> BUILDER_MASTER_ARMOR_MATERIAL = registerArmorMaterial("builder_master",
+            () -> new ArmorMaterial(
+                    Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                        map.put(ArmorItem.Type.BOOTS, 3);
+                        map.put(ArmorItem.Type.LEGGINGS, 3);
+                        map.put(ArmorItem.Type.CHESTPLATE, 3);
+                        map.put(ArmorItem.Type.HELMET, 3);
+                    }),
+                    15,
+                    SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+                    () -> Ingredient.ofItems(Items.NETHERITE_INGOT),
+                    List.of(new ArmorMaterial.Layer(Identifier.of(BuilderMaster.MOD_ID, "builder_master"))),
                     0.0f,
                     0.0f
             )

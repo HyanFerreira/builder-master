@@ -3,13 +3,13 @@
 	"id": "buildermaster",
 	"version": "${version}",
 	"name": "Builder Master",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Builder Master v${version}",
 	"authors": [
-		"Me!"
+		"Hyan Ferreira (hfstack)"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/HyanFerreira/builder-master"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/buildermaster/icon.png",

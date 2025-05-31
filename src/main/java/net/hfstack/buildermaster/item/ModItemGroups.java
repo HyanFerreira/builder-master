@@ -27,6 +27,11 @@ public class ModItemGroups {
                         entries.add(ModItems.BUILDER_ADVANCED_LEGGINGS);
                         entries.add(ModItems.BUILDER_ADVANCED_BOOTS);
 
+                        entries.add(ModItems.BUILDER_MASTER_HELMET);
+                        entries.add(ModItems.BUILDER_MASTER_CHESTPLATE);
+                        entries.add(ModItems.BUILDER_MASTER_LEGGINGS);
+                        entries.add(ModItems.BUILDER_MASTER_BOOTS);
+
                     }).build());
 
     public static void registerModItemGroups() {

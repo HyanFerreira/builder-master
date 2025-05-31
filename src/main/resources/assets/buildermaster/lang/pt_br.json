@@ -9,5 +9,10 @@
   "item.buildermaster.builder_advanced_helmet": "Capacete de Construtor Avançado",
   "item.buildermaster.builder_advanced_chestplate": "Peitoral de Construtor Avançado",
   "item.buildermaster.builder_advanced_leggings": "Calças de Construtor Avançado",
-  "item.buildermaster.builder_advanced_boots": "Botas de Construtor Avançado"
+  "item.buildermaster.builder_advanced_boots": "Botas de Construtor Avançado",
+
+  "item.buildermaster.builder_master_helmet": "Capacete de Construtor Mestre",
+  "item.buildermaster.builder_master_chestplate": "Peitoral de Construtor Mestre",
+  "item.buildermaster.builder_master_leggings": "Calças de Construtor Mestre",
+  "item.buildermaster.builder_master_boots": "Botas de Construtor Mestre"
 }
