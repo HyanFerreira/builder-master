@@ -4,5 +4,10 @@
   "item.buildermaster.builder_initiate_helmet": "Capacete de Construtor Iniciante",
   "item.buildermaster.builder_initiate_chestplate": "Peitoral de Construtor Iniciante",
   "item.buildermaster.builder_initiate_leggings": "Calças de Construtor Iniciante",
-  "item.buildermaster.builder_initiate_boots": "Botas de Construtor Iniciante"
+  "item.buildermaster.builder_initiate_boots": "Botas de Construtor Iniciante",
+
+  "item.buildermaster.builder_advanced_helmet": "Capacete de Construtor Avançado",
+  "item.buildermaster.builder_advanced_chestplate": "Peitoral de Construtor Avançado",
+  "item.buildermaster.builder_advanced_leggings": "Calças de Construtor Avançado",
+  "item.buildermaster.builder_advanced_boots": "Botas de Construtor Avançado"
 }

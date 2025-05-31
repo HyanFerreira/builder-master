@@ -4,5 +4,10 @@
   "item.buildermaster.builder_initiate_helmet": "Beginner Builder Helmet",
   "item.buildermaster.builder_initiate_chestplate": "Beginner Builder Chestplate",
   "item.buildermaster.builder_initiate_leggings": "Beginner Builder Leggings",
-  "item.buildermaster.builder_initiate_boots": "Beginner Builder Boots"
+  "item.buildermaster.builder_initiate_boots": "Beginner Builder Boots",
+
+  "item.buildermaster.builder_advanced_helmet": "Advanced Builder Helmet",
+  "item.buildermaster.builder_advanced_chestplate": "Advanced Builder Chestplate",
+  "item.buildermaster.builder_advanced_leggings": "Advanced Builder Leggings",
+  "item.buildermaster.builder_advanced_boots": "Advanced Builder Boots"
 }
