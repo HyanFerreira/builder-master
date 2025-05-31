@@ -14,13 +14,19 @@ public class ModItemGroups {
 
     public static final ItemGroup BUILDER_MASTER_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(BuilderMaster.MOD_ID, "builder_master_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(Items.IRON_INGOT))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.BUILDER_INITIATE_HELMET))
                     .displayName(Text.translatable("itemGroup.buildermaster.builder_master_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.BUILDER_INITIATE_HELMET);
                         entries.add(ModItems.BUILDER_INITIATE_CHESTPLATE);
                         entries.add(ModItems.BUILDER_INITIATE_LEGGINGS);
                         entries.add(ModItems.BUILDER_INITIATE_BOOTS);
+
+                        entries.add(ModItems.BUILDER_ADVANCED_HELMET);
+                        entries.add(ModItems.BUILDER_ADVANCED_CHESTPLATE);
+                        entries.add(ModItems.BUILDER_ADVANCED_LEGGINGS);
+                        entries.add(ModItems.BUILDER_ADVANCED_BOOTS);
+
                     }).build());
 
     public static void registerModItemGroups() {

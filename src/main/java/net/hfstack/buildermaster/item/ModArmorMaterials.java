@@ -34,6 +34,23 @@ public class ModArmorMaterials {
             )
     );
 
+    public static final RegistryEntry<ArmorMaterial> BUILDER_ADV_ARMOR_MATERIAL = registerArmorMaterial("builder_advanced",
+            () -> new ArmorMaterial(
+                    Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                        map.put(ArmorItem.Type.BOOTS, 2);
+                        map.put(ArmorItem.Type.LEGGINGS, 2);
+                        map.put(ArmorItem.Type.CHESTPLATE, 2);
+                        map.put(ArmorItem.Type.HELMET, 2);
+                    }),
+                    15,
+                    SoundEvents.ITEM_ARMOR_EQUIP_IRON,
+                    () -> Ingredient.ofItems(Items.DIAMOND),
+                    List.of(new ArmorMaterial.Layer(Identifier.of(BuilderMaster.MOD_ID, "builder_advanced"))),
+                    0.0f,
+                    0.0f
+            )
+    );
+
     public static RegistryEntry<ArmorMaterial> registerArmorMaterial(String name, Supplier<ArmorMaterial> material) {
         return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.of(BuilderMaster.MOD_ID, name), material.get());
     }
